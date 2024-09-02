@@ -48,27 +48,52 @@
                     <div className="courses-container">
                         {courses.map((course) => (
                             <div className="course-card" key={course}>
-                                <img
+                                <div className="course-image-container"> 
+                                    <img
                                     src="https://s3.ap-east-1.amazonaws.com/yogacommunity.org/wp-content/uploads/volunteer_attendance/b749c9f06170099.jpeg"
                                     alt="Course Image"
                                     className="course-image"
-                                />
+                                     />
+                                    <div className="course-price">
+                                        $200.00
+                                    </div>
+                                </div>
+                              
                                 <div className="course-info-section">
-                                    <h3 className="course-title">Course Title {course}</h3>
-                                    <p className="course-description">Learn the fundamentals of web development in this beginner-friendly course.</p>
-                                   
                                     <div className="course-rating">
-                                        <span className="course-rating-text">4 </span>
                                         {[...Array(maxStars)].map((_, index) => (
                                             <i
                                                 key={index}
                                                 className={index < filledStars ? 'fas fa-star' : 'far fa-star'}
                                             ></i>
                                         ))}
-                                        <span  className="course-description">(400)</span>
+
+                                        <span className="course-rating-text">4.00</span>
+
+                                        <span  className="course-description">(400 reviews)</span>
                                     </div>
 
-                                    <h4 className="course-price">$500</h4>
+                                
+                                    <h3 className="course-title">Course Title {course}</h3>
+                                    <p className="course-description">Learn the fundamentals of web development in this beginner-friendly course.</p>
+
+                                    <div className="course-bottom-info">
+                                        <div className="course-sub-info">
+                                            <i class="fa fa-clock" aria-hidden="true"></i>
+                                             <span className="course-bottom-text">7 hours </span>
+                                        </div>
+
+                                        <div className="course-sub-info">
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+
+                                            <span className="course-bottom-text">0 Students</span>
+                                        </div>
+
+                                        <div className="course-sub-info">
+                                            <i class="fa fa-play-circle" aria-hidden="true"></i>
+                                            <span className="course-bottom-text">15 Lessons</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         ))}
