@@ -19,7 +19,9 @@
     align-items: center;
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    padding: 10px 20px;
+    padding: 10px 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a soft shadow to the bottom */
+    padding: 0px 60px;
 }
 
 .logo {
@@ -76,9 +78,16 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Distributes columns equally */
     gap: 20px;
-    padding: 20px;
     width: 100%; /* Ensures the container takes full width */
     box-sizing: border-box; /* Includes padding in the width calculation */
+    padding: 0px 60px;
+}
+
+.courses-introduction {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 60px 60px 40px 60px;
 }
 
 
@@ -106,7 +115,6 @@
 .course-description {
     font-size: 14px;
     margin: 10px 0;
-    color: var(--secondary-color);
     display: -webkit-box; /* Required for multi-line truncation */
     -webkit-line-clamp: 2; /* Limits the text to 2 lines */
     -webkit-box-orient: vertical; /* Sets the box orientation to vertical */
@@ -121,7 +129,6 @@
 
 .course-description {
     font-size: 14px;
-    color: var(--secondary-color);
     display: -webkit-box; /* Required for multi-line truncation */
 }
 
@@ -142,16 +149,9 @@
 /* Footer */
 .footer {
     background-color: var(--primary-color);
-    color: var(--secondary-color);
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
-}
-
-body{
-    background-color: var(--primary-color);
-    padding-left: 55px;
-    padding-right: 55px;
 }
 
 .signup-button {
@@ -162,7 +162,6 @@ body{
 }
 
 .signin-button{
-    color: var(--secondary-color);
     border-color: var(--secondary-color);
     padding: 10px;
     background-color: var(--primary-color);
@@ -225,8 +224,7 @@ body{
 
 }
 
-.course-bottom-text{
-    color: var(--secondary-color);  
+.course-mini-intro .course-bottom-text{
     font-size: 14px 
 }
 
@@ -240,4 +238,35 @@ body{
 .course-sub-info{
     display: flex;
     gap: 5px;
+}
+
+body{
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+.course-subtitle{
+    margin-bottom: 8px;
+} 
+
+
+
+.tab-selection-container{
+    margin-top: 40px;
+}
+
+.course-tab {
+    padding-bottom: 20px;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.tab-selection-container{
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid var(--secondary-color); /* Light gray border */
+}
+
+.course-tab.active{
+    border-bottom: 2px solid var(--secondary-color); /* Light gray border */
 }
