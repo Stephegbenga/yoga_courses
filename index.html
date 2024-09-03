@@ -20,14 +20,25 @@
 
       function App() {
         const courses = [1, 2, 3, 4, 5, 6, 7, 8];
+        
         const maxStars = 5;
         const filledStars = Math.round(4);
+
+        const [hoveredIndex, setHoveredIndex] = useState(null);
 
         const tabs = ["Most Popular", "New", "Beginner Favorites"];
         const [activeTab, setActiveTab] = useState("Most Popular");
 
-        function handleTabSelection(tab){
-            setActiveTab(tab)
+        function handleTabSelection(tab) {
+          setActiveTab(tab);
+        }
+
+        function handleCourseClick() {
+          window.location.href = "/course-detail";
+        }
+
+        function handleCourseHover(index) {
+          setHoveredIndex(index);
         }
 
         return (
@@ -42,72 +53,88 @@
 
               <nav className="nav">
                 <a href="/cart" class="cart-icon">
-                  <i class="fas fa-shopping-cart"></i>
+                  <i class="fas fa-shopping-cart text-hover"></i>
                 </a>
 
-                <button className="signin-button">Signin</button>
-                <button className="signup-button">Signup</button>
+                <button className="signin-button hover">Signin</button>
+                <button className="signup-button hover">Signup</button>
               </nav>
             </header>
 
-            <div className="courses-introduction">
-              <h2 className="course-subtitle">Courses to get you started</h2>
-              <span className="course-mini-intro">Explore courses from experienced, real-world experts.</span>
+            <section className="main-section">
+              <div className="courses-introduction">
+                <h2 className="course-subtitle">Courses to get you started</h2>
+                <span className="course-mini-intro">Explore courses from experienced, real-world experts.</span>
 
-              <div className="tab-selection-container">
-                {tabs.map((tab) => {
-                  return <div onClick={() => handleTabSelection(tab)} className={`course-tab ${activeTab == tab ? 'active' : ''}`}>{tab}</div>;
-                })}
-              </div>
-            </div>
-
-            <div className="courses-container">
-              {courses.map((course) => (
-                <div className="course-card" key={course}>
-                  <div className="course-image-container">
-                    <img src="https://s3.ap-east-1.amazonaws.com/yogacommunity.org/wp-content/uploads/volunteer_attendance/b749c9f06170099.jpeg" alt="Course Image" className="course-image" />
-                    <div className="course-price">$200.00</div>
-                  </div>
-
-                  <div className="course-info-section">
-                    <div className="course-rating">
-                      {[...Array(maxStars)].map((_, index) => (
-                        <i key={index} className={index < filledStars ? "fas fa-star" : "far fa-star"}></i>
-                      ))}
-
-                      <span className="course-rating-text">4.00</span>
-
-                      <span className="course-description">(400 reviews)</span>
-                    </div>
-
-                    <h3 className="course-title">Course Title {course}</h3>
-                    <p className="course-description">Learn the fundamentals of web development in this beginner-friendly course.</p>
-
-                    <div className="course-bottom-info">
-                      <div className="course-sub-info">
-                        <i class="fa fa-clock" aria-hidden="true"></i>
-                        <span className="course-bottom-text">7 hours </span>
+                <div className="tab-selection-container">
+                  {tabs.map((tab) => {
+                    return (
+                      <div onClick={() => handleTabSelection(tab)} className={`text-hover course-tab ${activeTab == tab ? "active" : ""}`}>
+                        {tab}
                       </div>
-
-                      <div className="course-sub-info">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-
-                        <span className="course-bottom-text">0 Students</span>
-                      </div>
-
-                      <div className="course-sub-info">
-                        <i class="fa fa-play-circle" aria-hidden="true"></i>
-                        <span className="course-bottom-text">15 Lessons</span>
-                      </div>
-                    </div>
-                  </div>
+                    );
+                  })}
                 </div>
-              ))}
-            </div>
+              </div>
 
-            <footer className="footer">
-              <p>&copy; 2024 MyCourses. All Rights Reserved.</p>
-            </footer>
+              <div className="courses-container">
+                {courses.map((course, index) => (
+                  <div className="course-card" onClick={handleCourseClick} onMouseEnter={() => handleCourseHover(index)} onMouseLeave={() => handleCourseHover(null)} key={course}>
+                    {hoveredIndex == index ? (
+                       <div style={{display:"flex", flexDirection:"column", padding: "15px"}}>  
+                          <h2>$200.00</h2>     
+                          <h3 style={{marginTop: "30px", }}>PHP Msjsn sjs eje ejejje ejejeje  ejjeleek</h3>     
+                          <span style={{marginTop: "30px"}}>Learn the fundamentals of web development in this beginner-friendly course.</span>
+
+                          <button className="primary-btn" style={{width: "fit-content", marginTop: "50px", alignSelf: "center"}}>View Course</button>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="course-image-container">
+                          <img src="https://s3.ap-east-1.amazonaws.com/yogacommunity.org/wp-content/uploads/volunteer_attendance/b749c9f06170099.jpeg" alt="Course Image" className="course-image" />
+                          <div className="course-price">$200.00</div>
+                        </div>
+
+                        <div className="course-info-section">
+                          <div className="course-rating">
+                            {[...Array(maxStars)].map((_, index) => (
+                              <i key={index} className={index < filledStars ? "fas fa-star" : "far fa-star"}></i>
+                            ))}
+
+                            <span className="course-rating-text">4.00</span>
+
+                            <span className="course-description">(400 ratings)</span>
+                          </div>
+
+                          <h3 className="course-title">Course Title {course}</h3>
+                          <p className="course-description">Learn the fundamentals of web development in this beginner-friendly course.</p>
+
+                          <div className="course-bottom-info">
+                            <div className="course-sub-info">
+                              <i class="fa fa-clock" aria-hidden="true"></i>
+                              <span className="course-bottom-text">7 hours </span>
+                            </div>
+
+                            <div className="course-sub-info">
+                              <i class="fa fa-user" aria-hidden="true"></i>
+
+                              <span className="course-bottom-text">0 Students</span>
+                            </div>
+
+                            <div className="course-sub-info">
+                              <i class="fa fa-play-circle" aria-hidden="true"></i>
+                              <span className="course-bottom-text">15 Lessons</span>
+                            </div>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+           
           </div>
         );
       }

@@ -1,89 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Course Page</title>
-    <link rel="stylesheet" href="course-detail.css">
+    <link rel="stylesheet" href="course-detail.css" />
+    <link rel="stylesheet" href="courses.css" />
     <!-- Add FontAwesome library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body>
     <div id="root"></div>
 
     <!-- Add React and Babel library scripts -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
-        const { useEffect, useState } = React;
+      const {useEffect, useState} = React;
 
-        function App() {
-            const courses = [1, 2, 3, 4, 5, 6, 7, 8];
-            const maxStars = 5;
-            const filledStars = Math.round(4);
+      function App() {
+        const courses = [1, 2, 3, 4, 5, 6, 7, 8];
+        const maxStars = 5;
+        const filledStars = Math.round(4);
 
-            return (
-                <div>
-                    <header className="header">
-                        <div className="logo">MyCourses</div>
+        return (
+          <div className="main_container">
+            <header className="header">
+              <div className="logo">MyCourses</div>
 
-                        <div className="search-container">
-                            <input type="text" className="search-bar" placeholder="Search for courses..." />
-                            <button className="search-button">Search</button>
-                        </div>
+              <div className="search-container">
+                <input type="text" className="search-bar" placeholder="Search for courses..." />
+                <button className="search-button">Search</button>
+              </div>
 
-                        <nav className="nav">
-                            <a href="/cart" class="cart-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </a>
-                            
-                            <button className="signin-button">Signin</button>
-                            <button className="signup-button">Signup</button>
-                        </nav>
-                    </header>
+              <nav className="nav">
+                <a href="/cart" class="cart-icon">
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
 
+                <button className="signin-button hover">Signin</button>
+                <button className="signup-button hover">Signup</button>
+              </nav>
+            </header>
 
+            <section className="main-section">
+              <div className="course-info">
+                <div className="video-course-detail">
+                  <img src="https://s3.ap-east-1.amazonaws.com/yogacommunity.org/wp-content/uploads/volunteer_attendance/b749c9f06170099.jpeg" alt="Course Image" className="course-detail-image" />
 
-                    <div className="courses-container">
-                        {courses.map((course) => (
-                            <div className="course-card" key={course}>
-                                <img
-                                    src="https://s3.ap-east-1.amazonaws.com/yogacommunity.org/wp-content/uploads/volunteer_attendance/b749c9f06170099.jpeg"
-                                    alt="Course Image"
-                                    className="course-image"
-                                />
-                                <div className="course-info-section">
-                                    <h3 className="course-title">Course Title {course}</h3>
-                                    <p className="course-description">Learn the fundamentals of web development in this beginner-friendly course.</p>
-                                   
-                                    <div className="course-rating">
-                                        {[...Array(maxStars)].map((_, index) => (
-                                            <i
-                                                key={index}
-                                                className={index < filledStars ? 'fas fa-star' : 'far fa-star'}
-                                            ></i>
-                                        ))}
-                                        <span className="course-rating-text">4 </span>
+                  <div className="course-mini-info">
+                    <div className="course-rating">
+                      {[...Array(maxStars)].map((_, index) => (
+                        <i key={index} className={index < filledStars ? "fas fa-star" : "far fa-star"}></i>
+                      ))}
 
-                                        <span  className="course-description">(400)</span>
-                                    </div>
+                      <span className="course-rating-text">4.00</span>
 
-                                    <h4 className="course-price">$500</h4>
-                                </div>
-                            </div>
-                        ))}
+                      <span className="course-description">(400 reviews)</span>
                     </div>
 
-                    <footer className="footer">
-                        <p>&copy; 2024 MyCourses. All Rights Reserved.</p>
-                    </footer>
-                </div>
-            );
-        }
+                    <h3>The Complete JavaScript Course 2019</h3>
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
+                    <div style={{marginTop: "30px"}}>
+                      <h3 style={{marginBottom: "10px"}}>Course Info</h3>
+                      <span className="small-spaced-text">
+                        Are you new to PHP or need a refresher? Then this course will help you get all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi and ending the course by building a CMS system similar to WordPress, Joomla or Drupal. Knowing PHP has allowed me to make enough money to stay home and make courses like this one for students all over the world. Being a PHP developer
+                        can allow anyone to make really good money online and offline, developing dynamic applications. Knowing PHP will allow you to build web applications, websites or Content Management systems, like WordPress, Facebook, Twitter or even Google. There is no limit to what you can do with this knowledge. PHP is one of the most important web programming languages to learn, and
+                        knowing it, will give you SUPER POWERS in the web development world and job market place.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pricing-action">
+                  <h3>$250.00</h3>
+                  <button className="primary-btn hover">Add to Cart</button>
+
+                  <hr />
+
+                  <div style={{display: "flex", gap: "20px", flexDirection: "column", justifyContent: "space-between"}}>
+                    <div style={{display: "flex", alignItems: "center", gap: "10px"}}>
+                     <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                      <span>0 Total Enrolled</span>
+                    </div>
+
+                    <div style={{display: "flex", alignItems: "center", gap: "10px"}}>
+                        <i class="fa fa-clock" aria-hidden="true"></i>
+                      <span>18 hours Duration</span>
+                    </div>
+
+                    <div style={{display: "flex", alignItems: "center", gap: "10px"}}>
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                      <span>May 17, 2019 Last Updated</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
     </script>
-</body>
+  </body>
 </html>
