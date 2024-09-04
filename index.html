@@ -20,7 +20,7 @@
 
       function App() {
         const courses = [1, 2, 3, 4, 5, 6, 7, 8];
-        
+
         const maxStars = 5;
         const filledStars = Math.round(4);
 
@@ -43,8 +43,8 @@
 
         return (
           <div>
-            <header className="header">
-              <div className="logo">MyCourses</div>
+            <header className="main-header">
+              <div className="logo">Logo</div>
 
               <div className="search-container">
                 <input type="text" className="search-bar" placeholder="Search for courses..." />
@@ -61,9 +61,36 @@
               </nav>
             </header>
 
+            <header className="mobile-header">
+
+              <div style={{display: "flex", flex: 1}}>
+                <a>
+                  <i style={{fontSize: "20px"}} class="fa fa-bars" aria-hidden="true"></i>
+                </a>
+              </div>
+
+              <div className="logo" style={{display: "flex", justifyContent: "center", flex: 1}}>
+                <h3>Logo </h3>
+              </div>
+
+              <div style={{display:"flex", gap: "10px",  justifyContent: "flex-end", flex: 1}}>
+                <a href="/cart" class="cart-icon">
+                  <i class="fa fa-shopping-cart text-hover"></i>
+                </a>
+              </div>
+            </header>
+            
+           
             <section className="main-section">
+              <div className="mobile-search">
+                <input type="text" className="search-bar" placeholder="Search for courses..." />
+                <button className="search-button">Search</button>
+              </div>
+
+
+
               <div className="courses-introduction">
-                <h2 className="course-subtitle">Courses to get you started</h2>
+                <h3 className="course-subtitle">Courses to get you started</h3>
                 <span className="course-mini-intro">Explore courses from experienced, real-world experts.</span>
 
                 <div className="tab-selection-container">
@@ -81,12 +108,14 @@
                 {courses.map((course, index) => (
                   <div className="course-card" onClick={handleCourseClick} onMouseEnter={() => handleCourseHover(index)} onMouseLeave={() => handleCourseHover(null)} key={course}>
                     {hoveredIndex == index ? (
-                       <div style={{display:"flex", flexDirection:"column", padding: "15px"}}>  
-                          <h2>$200.00</h2>     
-                          <h3 style={{marginTop: "30px", }}>PHP Msjsn sjs eje ejejje ejejeje  ejjeleek</h3>     
-                          <span style={{marginTop: "30px"}}>Learn the fundamentals of web development in this beginner-friendly course.</span>
+                      <div style={{display: "flex", flexDirection: "column", padding: "15px"}}>
+                        <h2>$200.00</h2>
+                        <h3 style={{marginTop: "30px"}}>PHP Msjsn sjs eje ejejje ejejeje ejjeleek</h3>
+                        <span style={{marginTop: "30px"}}>Learn the fundamentals of web development in this beginner-friendly course.</span>
 
-                          <button className="primary-btn" style={{width: "fit-content", marginTop: "50px", alignSelf: "center"}}>View Course</button>
+                        <button className="primary-btn" style={{width: "fit-content", marginTop: "50px", alignSelf: "center"}}>
+                          View Course
+                        </button>
                       </div>
                     ) : (
                       <>
@@ -133,8 +162,6 @@
                 ))}
               </div>
             </section>
-
-           
           </div>
         );
       }

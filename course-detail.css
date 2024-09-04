@@ -41,10 +41,12 @@
 /* Mobile View */
 @media (max-width: 768px) {
     .course-info{
-        display: flex;
         flex-direction: column;
+    }
+
+    .pricing-action{
         width: 100%;
-        gap: 20px;
+        height: 400px;
     }
 
     
@@ -53,10 +55,7 @@
         flex-basis: 100%;
     }
 
-    .pricing-action {
-        min-width: 100%; /* Change to full width on smaller screens */
-        flex-basis: 100%;
-    }
+
 }
 
 
