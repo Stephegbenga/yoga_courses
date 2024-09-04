@@ -47,7 +47,6 @@
     .pricing-action {
         width: 100%;
         padding: 20px; /* Adjust padding for mobile view */
-        display: block; /* Ensure block display on mobile */
         margin-top: 20px; /* Add margin for spacing */
     }
 

@@ -77,15 +77,20 @@
                   <img src="https://s3.ap-east-1.amazonaws.com/yogacommunity.org/wp-content/uploads/volunteer_attendance/b749c9f06170099.jpeg" alt="Course Image" className="course-detail-image" />
 
                   <div className="course-mini-info">
-                    <div className="course-rating">
-                      {[...Array(maxStars)].map((_, index) => (
-                        <i key={index} className={index < filledStars ? "fas fa-star" : "far fa-star"}></i>
-                      ))}
+                    <div style={{display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"space-between", width:"100%"}}>
+                        <div className="course-rating" style={{display:"flex", flexDirection :"row"}}>
+                          {[...Array(maxStars)].map((_, index) => (
+                            <i key={index} className={index < filledStars ? "fas fa-star" : "far fa-star"}></i>
+                          ))}
 
-                      <span className="course-rating-text">4.00</span>
+                          <span className="course-rating-text">4.00</span>
 
-                      <span className="course-description">(400 reviews)</span>
-                    </div>
+                          <span className="course-description">(400 reviews)</span>
+                        </div>
+
+                        <button className="primary-btn hover" style={{width:"fit-content", paddingRight: "40px", paddingLeft: "40px"}}>Enroll Now</button>
+                      </div>
+
 
                     <h3>The Complete JavaScript Course 2019</h3>
 
