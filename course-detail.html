@@ -74,47 +74,63 @@
 
               <div className="course-info">
                 <div className="video-course-detail">
-                  <img src="https://s3.ap-east-1.amazonaws.com/yogacommunity.org/wp-content/uploads/volunteer_attendance/b749c9f06170099.jpeg" alt="Course Image" className="course-detail-image" />
 
                   <div className="course-mini-info">
-                    <div style={{display:"flex", flexDirection:"column",   width:"100%", marginBottom:"20px"}}>
-                        <div className="course-rating" style={{display:"flex", flexDirection :"row"}}>
-                          {[...Array(maxStars)].map((_, index) => (
-                            <i key={index} className={index < filledStars ? "fas fa-star" : "far fa-star"}></i>
-                          ))}
+                    <h1 style={{marginBottom: "15px"}}>About the course</h1>
 
-                          <span className="course-rating-text">4.00</span>
+                    <span className="small-spaced-text">
+                      Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus viverra praesent felis consequat pellentesque turpis et quisque platea. Eu, elit ut nunc ac mauris bibendum nulla placerat.
+                    </span>
 
-                          <span className="course-description">(400 reviews)</span>
-                        </div>
+                    <hr />
 
-                        <button className="primary-btn hover" style={{width:"fit-content", paddingRight: "20px", paddingLeft: "20px"}}>Enroll Now</button>
-                      </div>
+                    <h1 style={{marginBottom: "15px"}}>What will you learn</h1>
 
+                    <span className="small-spaced-text">
+                      Aru, elit ut nunc ac mauris bibendum nulla placerat. Sagittis sit eu sit massa sapien, risus diam. In lorem eu sed euismod laoreet urna, feugiat et. scelerisque varius morbi. 
+                    </span>
 
-                    <h3>The Complete JavaScript Course 2019</h3>
-
-                    <div style={{marginTop: "30px"}}>
-                      <h3 style={{marginBottom: "10px"}}>Course Info</h3>
-                      <span className="small-spaced-text">
-                        Are you new to PHP or need a refresher? Then this course will help you get all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi and ending the course by building a CMS system similar to WordPress, Joomla or Drupal. Knowing PHP has allowed me to make enough money to stay home and make courses like this one for students all over the world. Being a PHP developer
-                        can allow anyone to make really good money online and offline, developing dynamic applications. Knowing PHP will allow you to build web applications, websites or Content Management systems, like WordPress, Facebook, Twitter or even Google. There is no limit to what you can do with this knowledge. PHP is one of the most important web programming languages to learn, and
-                        knowing it, will give you SUPER POWERS in the web development world and job market place.
-                      </span>
                     </div>
-                  </div>
+
+                    <div style={{display: "flex", gap: "10px", flexDirection:"column"}}>
+                      <div style={{display:"flex", flexDirection:"row", alignItems:"center"}}>
+                        <i class="fa fa-check" style={{fontSize: "20px"}} aria-hidden="true"></i>
+                        <span style={{marginLeft: "10px"}}>Ut venenatis tellus in metus vulputate eu scelerisque</span>
+                      </div>
+                      <div style={{display:"flex", flexDirection:"row", alignItems:"center"}}>
+                        <i class="fa fa-check" style={{fontSize: "20px"}} aria-hidden="true"></i>
+                        <span style={{marginLeft: "10px"}}>Ut venenatis tellus in metus vulputate eu scelerisque</span>
+                      </div>
+                      <div style={{display:"flex", flexDirection:"row", alignItems:"center"}}>
+                        <i class="fa fa-check" style={{fontSize: "20px"}} aria-hidden="true"></i>
+                        <span style={{marginLeft: "10px"}}>Ut venenatis tellus in metus vulputate eu scelerisque</span>
+                      </div>
+                    </div>
+
+                    <hr />
+
+
+                    <h1 style={{marginBottom: "15px"}}>Course content</h1>
+
+                    <span className="small-spaced-text">
+                      Aru, elit ut nunc ac mauris bibendum nulla placerat. Sagittis sit eu sit massa sapien, risus diam. In lorem eu sed euismod laoreet urna, feugiat et. scelerisque varius morbi. 
+                    </span>
                 </div>
 
                 <div className="pricing-action">
-                  <h3>$250.00</h3>
-                  <button className="primary-btn hover">Add to Cart</button>
 
+                  <img src="https://s3.ap-east-1.amazonaws.com/yogacommunity.org/wp-content/uploads/volunteer_attendance/b749c9f06170099.jpeg" alt="Course Image" className="course-detail-image" />
+
+                  <h2 style={{marginTop: "20px"}}>$250.00 USD</h2>
+                    <button className="primary-btn hover"  style={{marginTop: "30px", padding: "20px"}}>Join Course</button>
                   <hr />
 
                   <div style={{display: "flex", gap: "20px", flexDirection: "column", justifyContent: "space-between"}}>
+                    <h3>About this course</h3>
+                    
                     <div style={{display: "flex", alignItems: "center", gap: "10px"}}>
                      <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                      <span>0 Total Enrolled</span>
+                      <span>12 Students</span>
                     </div>
 
                     <div style={{display: "flex", alignItems: "center", gap: "10px"}}>
@@ -127,6 +143,7 @@
                       <span>May 17, 2019 Last Updated</span>
                     </div>
                   </div>
+                  
                 </div>
               </div>
 

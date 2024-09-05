@@ -100,7 +100,7 @@
 
 .courses-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Distributes columns equally */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Distributes columns equally */
     gap: 20px;
     width: 100%; /* Ensures the container takes full width */
     box-sizing: border-box; /* Includes padding in the width calculation */
@@ -112,7 +112,6 @@
     width: 100%;
     margin-bottom: 50px;
 }
-
 
 .course-card {
     border: 1px solid #ddd;
@@ -126,7 +125,6 @@
     height: auto;
     border-radius: 8px;
 }
-
 
 .course-title {
     font-size: 18px;
@@ -148,12 +146,10 @@
     padding: 15px;
 }
 
-
 .course-description {
     font-size: 14px;
     display: -webkit-box; /* Required for multi-line truncation */
 }
-
 
 .enroll-button {
     background-color: var(--secondary-color);
@@ -214,9 +210,6 @@
     gap: 5px;
   } 
 
-  .course-price{
-    color: var(--secondary-color)
-  }
 
   .cart-icon {
     font-size: 24px; /* Adjust the size of the cart icon */
@@ -234,8 +227,8 @@
     width: fit-content;
     padding: 10px;
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 10px;
+    top: 10px;
 }
 
 .course-image-container {
@@ -248,10 +241,12 @@
 }
 
 .course-bottom-info{
+    border-top: 1px solid var(--secondary-color); /* Light gray border */
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 0px;
 }
 
 .course-sub-info{
@@ -350,12 +345,12 @@ hr {
     }
 
     
-.main-section{
-    display: flex;
-    width: 100%;
-    padding: 30px;
-    flex-direction: column;
+    .main-section{
+        display: flex;
+        width: 100%;
+        padding: 30px;
+        flex-direction: column;
+    }
+
 }
 
-
-}
