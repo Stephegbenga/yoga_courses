@@ -21,36 +21,19 @@
 
 
       function App() {
-        const [course, setCourse] = useState({})
+        const courses = [1, 2, 3, 4, 5, 6, 7, 8];
         const [activeIndex, setActiveIndex] = useState(null); // State to track the active item
 
         const queryParams = new URLSearchParams(window.location.search);
         // Get the 'course_id' parameter value
-        const course_id = queryParams.get('course_id');
+        const courseId = queryParams.get('course_id');
+
 
         const maxStars = 5;
         const filledStars = Math.round(4);
         const [show, setShow] = useState(false);
 
         const [course_contents] = useState([1,2,3,4])
-
-
-        useEffect(() => {
-          const onLoad = async () => {
-            let result = await get_course_detail(course_id);
-            
-            if(result.status == "success"){
-              console.log(result.course)
-
-              if(result.course){
-                setCourse(result.course)
-              }
-            }
-          };
-
-          onLoad();
-        }, []);
-
         
 
       const toggleActive = (index) => {
@@ -63,26 +46,11 @@
       };
 
 
-      async function get_course_detail(courae_id){
-        const formData = new FormData();
-        formData.append("action", "get_course_detail");
-        formData.append("course_id", course_id);
 
-        try {
-          const response = await fetch("https://www.yogafromtheheart.live/wp-admin/admin-ajax.php", {
-            method: "POST",
-            body: formData,
-          });
+      function get_course_detail(){
 
-          const result = await response.json();
-          return result;
-        } catch (error) {
-          console.error("Error:", error);
-        }
       }
 
-
-      
         return (
           <div style={{display:'flex', flexDirection:"column"}}>
           <header className="main-header">
@@ -136,7 +104,7 @@
                     <h1 style={{marginBottom: "15px"}}>About the course</h1>
 
                     <span className="small-spaced-text">
-                      {course.description}
+                      Lorem ipsum dolor sit amet, consectetur dolorili adipiscing elit. Felis donec massa aliquam id.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus viverra praesent felis consequat pellentesque turpis et quisque platea. Eu, elit ut nunc ac mauris bibendum nulla placerat.
                     </span>
 
                     <hr />
@@ -165,14 +133,49 @@
                     </div>
 
                     <hr />
-                
+                    
+                    <h1 style={{marginBottom: "15px"}}>Course content</h1>
+
+                    <span className="small-spaced-text">
+                      Aru, elit ut nunc ac mauris bibendum nulla placerat. Sagittis sit eu sit massa sapien, risus diam. In lorem eu sed euismod laoreet urna, feugiat et. scelerisque varius morbi. 
+                    </span>
+
+                    <div class="course-content">
+
+                      
+                      {course_contents.map((content, index) => (
+                        <div key={index} className="course-content-item">
+                          <div
+                            className="course-content-item-head"
+                            onClick={() => toggleActive(index)} // Add click event to toggle active state
+                          >
+                            <h3>{content}. Understanding Your DSLR</h3>
+                            <i
+                              className={activeIndex == index ? 'fa fa-angle-up' : 'fa fa-angle-down'}
+                              style={{ fontSize: '24px' }}
+                              aria-hidden="true"
+                            ></i>
+                          </div>
+                          <span
+                            className={`course-content-text ${
+                              activeIndex === index ? 'active' : ''
+                            }`}
+                          >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+                            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                          </span>
+                        </div>
+                      ))}
+
+                    </div>
+
                 </div>
 
                 <div className="pricing-action">
 
-                  <img src={course.thumbnail} alt="Course Image" className="course-detail-image" />
+                  <img src="https://s3.ap-east-1.amazonaws.com/yogacommunity.org/wp-content/uploads/volunteer_attendance/b749c9f06170099.jpeg" alt="Course Image" className="course-detail-image" />
 
-                  <h2 style={{marginTop: "20px"}}>${course.price} USD</h2>
+                  <h2 style={{marginTop: "20px"}}>$250.00 USD</h2>
                     <button className="primary-btn hover"  style={{marginTop: "30px", padding: "20px"}}>Join Course</button>
                   <hr />
 

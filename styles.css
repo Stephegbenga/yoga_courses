@@ -1,0 +1,212 @@
+:root {
+    --primary-color: #cfab79;
+    --secondary-color: #d9d9d9;
+    --tertiary-color: #d9d9d9;
+  }
+
+  /* styles.css */
+
+  .flex {
+    display: flex;
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  .column {
+    flex-direction: column;
+  }
+
+  .row {
+    flex-direction: row;
+  }
+
+  .align-center {
+    align-items: center;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .justify-end {
+    justify-content: end;
+  }
+
+  .justify-space-between {
+    justify-content: space-between;
+  }
+
+  .align-center {
+    align-items: center;
+  }
+
+  .bordered-table {
+    border-collapse: collapse; /* Ensures borders are not doubled */
+    width: 100%;
+    margin: 20px auto; /* Centers the table */
+  }
+
+  .bordered-table th,
+  .bordered-table td {
+    border: 2px solid var(--secondary-color); /* Sets a solid border with a dark color */
+    padding: 10px;
+    text-align: left;
+  }
+
+  .bordered-table th {
+    border-bottom: 3px solid var(--secondary-color); /* Makes the header bottom border slightly thicker */
+  }
+
+  .head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--tertiary-color);
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 5px;
+  }
+
+  .gap-10 {
+    gap: 10px;
+  }
+
+  .gap-5 {
+    gap: 5px;
+  }
+
+  .btn,
+  button {
+    cursor: pointer;
+  }
+
+  .btn {
+    padding: 8px 20px;
+  }
+
+  .search-input {
+    border: 2px solid var(--tertiary-color);
+    align-items: center;
+    padding: 10px;
+  }
+
+  .search-input:focus,
+  .search-input:active {
+    border-color: green;
+  }
+
+  .margin-top-20 {
+    margin-top: 20px;
+  }
+
+  .margin-top-40 {
+    margin-top: 40px;
+  }
+
+  .bg-green {
+    background-color: green;
+  }
+
+  .video-card {
+    border: 2px solid var(--tertiary-color);
+    margin-top: 20px;
+  }
+
+  .btn-danger {
+    background-color: red;
+    color: white;
+    border: none;
+  }
+
+  .video-input {
+    display: flex;
+    border: 2px solid var(--tertiary-color);
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .padding-10 {
+    padding: 10px;
+  }
+
+  .quiz-card {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color); /* Sets a solid border with a dark color */
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .quiz-question {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .quiz-answers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Ensure there are two items on a row */
+    width: 100%;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color); /* Sets a solid border with a dark color */
+  }
+
+  .quiz-answer-item {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    border: 1px solid var(--secondary-color); /* Sets a solid border with a dark color */
+    padding: 5px;
+    height: 35px;
+  }
+
+  .quiz-answer-item input {
+    border: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+  }
+
+  textarea:focus, input:focus, select:focus {
+    border: none;
+    outline-color: green;
+  }
+
+  .text-danger {
+    color: red;
+  }
+
+  .fa-times {
+    margin-left: 20px;
+  }
+
+  .cursor-pointer{
+    cursor: pointer;
+  }
+
+  .margin-right-10 {
+    margin-left: 10px;
+  }
+
+  .w-f{
+    width: "100%";
+    flex:1;
+  }
+  
+  .bottom-action-btn{
+    color: white;
+    background-color: #753F00;
+    padding: 8px 15px;
+    border: none;
+  }

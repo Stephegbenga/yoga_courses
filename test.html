@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T-Course - Mastering Illustration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+
+            /* Layout & Flexbox */
+        .flex {
+            display: flex;
+        }
+        
+        .flex-1 {
+            flex: 1;
+        }
+        
+        .column {
+            flex-direction: column;
+        }
+        
+        .row {
+            flex-direction: row;
+        }
+        
+        .align-center {
+            align-items: center;
+        }
+        
+        .justify-center {
+            justify-content: center;
+        }
+        
+        .justify-end {
+            justify-content: end;
+        }
+        
+        .justify-space-between {
+            justify-content: space-between;
+        }
+
+        /* Spacing */
+        .gap-5 {
+            gap: 5px;
+        }
+        
+        .gap-10 {
+            gap: 10px;
+        }
+        
+        .padding-10 {
+            padding: 10px;
+        }
+        
+        .padding-20 {
+            padding: 20px;
+        }
+        
+        .margin-top-20 {
+            margin-top: 20px;
+        }
+        
+        .margin-top-40 {
+            margin-top: 40px;
+        }
+        
+        .margin-bottom-10 {
+            margin-bottom: 10px;
+        }
+
+        .margin-bottom-20 {
+            margin-bottom: 20px;
+        }
+
+
+              
+        .text-md{
+          font-size: medium;
+        }
+
+        .text-small{
+          font-size: small;
+        }
+
+        .text-large{
+          font-size: large;
+        }
+
+        .gap-5 {
+          gap: 5px;
+        }
+
+        .spacing-1 {
+          letter-spacing: 1px;
+        }
+
+            
+        :root {
+            --primary-color: #f7d59f;
+            --secondary-color: #543405;
+            --tertiary-color: #d0861c;
+        }
+
+
+      .container {
+        display: flex;
+        height: 100vh;
+        color: var(--secondary-color);
+        background-color: var(--primary-color);
+      }
+
+      .sidebar {
+        padding: 10px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+      }
+
+      
+      .sidebar-btn-group{
+        display: flex;
+        flex-direction: column;
+      }
+
+      .sidebar-btn{
+        display: flex;
+        gap: 5px;
+        padding: 10px;
+        border :none;
+        border-radius: 15px;
+        font-size: small;
+        white-space: nowrap;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      .sidebar-btn:hover{
+        background-color: var(--secondary-color);
+        color: white;
+      }
+
+
+
+      .main-content{
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+      }
+
+      .main-content-header{
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added downward shadow */
+        padding: 10px 40px;
+        align-items: center;
+      }
+      
+      .main-content-body {
+        padding: 30px;
+        overflow-y: auto;
+        display: flex;
+      }
+
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .search-bar {
+        padding: 10px;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        width: 400px;
+        outline-color: var(--secondary-color);
+      }
+
+      
+      .course-image {
+        width: 100%;
+        height: 300px;
+        background-color: #ffd1dc;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      .progress-bar {
+        background-color: #e0e0e0;
+        height: 10px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      .progress {
+        width: 4%;
+        height: 100%;
+        background-color: #8a2be2;
+        border-radius: 5px;
+      }
+      .course-item {
+        background-color: white;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        padding: 15px;
+        font-size: smaller;
+        cursor: pointer;
+      }
+
+      .active {
+        background-color: #8a2be2;
+        color: white;
+      }
+
+      .progress-side-bar {
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+      }
+
+      .course-detail {
+        margin-right: 20px;
+      }
+
+      .instructor-detail {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      
+      .study-progress {
+        background-color: white;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        padding: 10px 20px;
+        border-radius: 15px;
+      }
+
+      .course-item{
+        display: flex;
+        align-items: center;       
+        gap: 5px; 
+      }
+      
+    </style>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const { useState, useEffect } = React;
+
+      
+      function App() {
+        return (
+          <div className="container">
+            <div className="sidebar">
+              <h2>Courses</h2>
+              <div className="sidebar-btn-group">
+                <button className="sidebar-btn"><i className="far fa-folder"></i> My Courses</button>
+                <button className="sidebar-btn"><i className="far fa-bookmark"></i> Saved Courses</button>
+              </div>
+            </div>
+            <div className="main-content">
+              <div className="main-content-header">
+                <input type="text" placeholder="Try searching Other Courses" className="search-bar" />
+                <div>
+                  <span><i className="fas fa-bell"></i></span>
+                  <span>Kang Addin</span>
+                </div>
+              </div>
+              <div className="main-content-body">
+                <div className="course-detail">
+                  <div>
+                    <p>My Course &gt; Mastering Illustration &gt; Course</p>
+                    <h1>Mastering Illustration</h1>
+                  </div>
+
+                  <div className="course-image">
+                    <video controls style={{ width: '100%', height: '100%', borderRadius: '10px' }}>
+                      <source src="path/to/your/video.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+
+                  <div className="instructor-detail">
+                    <div className="flex">
+                      <h3>Instructor:</h3>
+                      <h3>Simon Simorangkir</h3>
+                    </div>
+                    <div className="flex gap-10">
+                      <a href="#"><i className="far fa-bookmark"></i></a>
+                      <a href="#"><i className="fas fa-share-alt"></i></a>
+                    </div>
+                  </div>
+                  <div>
+                    <h3>About This Course</h3>
+                    <p className="spacing-1">
+                      Unlock your creative potential with our Beginner-Level Illustrator Course! Are you ready to embark on a journey into the world of digital art and design? Our Mastering Illustrator course is perfect for beginners looking to learn the ropes of Adobe Illustrator, the industry-standard vector graphics software. From crafting stunning graphics to bringing your artistic visions to lif...
+                    </p>
+                    <a href="#">Show more</a>
+                  </div>
+                 
+                </div>
+
+
+                
+                <div className="progress-side-bar">
+                  <div className="study-progress">
+                    <h3 className="text-md">Your Study Progress 4%</h3>
+                    <div className="progress-bar">
+                      <div className="progress"></div>
+                    </div>
+                    <p className="text-small spacing-1">Great Job! 🎉 You're on the path to becoming a certified Mastering Illustration. Your dedication to learning is impressive. Finish strong!</p>
+                  </div>
+                  <div className="course-progress">
+                    <div>
+                      <span></span>
+                    </div>
+                    <h3 className="text-md">Course Completion 1/25</h3>
+                    <div className="course-item">
+                      <span><i className="fas fa-play-circle"></i></span>
+                      <div className="flex column">
+                        <span className="text-md">Introduction</span>
+                        <span>20 min</span>
+                      </div>
+                    </div>
+                    <div className="course-item active">
+                      <span><i className="fas fa-pause-circle"></i></span>
+                      <div className="flex column">
+                        <span className="text-md">Mastering Tools</span>
+                        <span>1 hour 20 min</span>
+                      </div>
+                    </div>
+                    <div className="course-item">
+                      <span><i className="fas fa-play-circle"></i></span>
+                      <div className="flex column padding-10">
+                        <span className="text-md">Mastering Adobe Illustrator</span>
+                        <span>2 hour 10 min</span>
+                      </div>
+                    </div>
+                    <div className="course-item">
+                      <span><i className="fas fa-play-circle"></i></span>
+                      <div className="flex column">
+                        <span className="text-md">Create Simple Shape</span>
+                        <span>40 min</span>
+                      </div>
+                    </div>
+                    <div className="course-item">
+                      <span><i className="fas fa-play-circle"></i></span>
+                      <div className="flex column">
+                        <span className="text-md">Mastering Pro Create</span>
+                        <span>40 min</span>
+                      </div>
+                    </div>
+                    <div className="course-item">
+                      <span><i className="fas fa-play-circle"></i></span>
+                      <div className="flex column">
+                        <span className="text-md">Mastering Pro Create</span>
+                        <span>1 hour 40 min</span>
+                      </div>
+                    </div> 
+                    <div className="course-item">
+                      <span><i className="fas fa-play-circle"></i></span>
+                      <div className="flex column ">
+                        <span className="text-md">Mastering Pro Create</span>
+                        <span>2 hour</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
+

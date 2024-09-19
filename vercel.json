@@ -2,7 +2,7 @@
     "version": 2,
     "routes": [
       { "src": "/", "dest": "/index.html" },
-         { "src": "/course-detail", "dest": "/course-detail.html" }
+         { "src": "/course-detail", "dest": "/test.html" }
 
     ]
   }
